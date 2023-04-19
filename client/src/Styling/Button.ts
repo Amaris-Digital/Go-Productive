@@ -22,3 +22,22 @@ const COLORS = {
   margin-bottom: 10%;
   text-decoration: none;
 `;
+
+const FillButton = styled(ButtonBase)`
+  background-color: white;
+  color: darkblue;
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
+const OutlineButton = styled(ButtonBase)`
+  background-color: white;
+  color: darkblue;
+  border: 2px solid var(--main);
+  &:hover {
+    background: hsl(235deg 85% 97%);
+  }
+`;
+
+export default Button;
