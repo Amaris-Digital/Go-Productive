@@ -8,7 +8,7 @@ interface Props {
     
   }
 
-const TodoList = () => {
+const TodoList: React.FC<Props> = ({todos, setTodos}) => {
   return (
     <div>
       
