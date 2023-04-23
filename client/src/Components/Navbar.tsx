@@ -8,3 +8,18 @@ interface Props {
     setUser: React.Dispatch<React.SetStateAction<null>>;
     onLogout: () => void;
   }
+
+  const Navbar: React.FC<Props> = ({ setUser, user, onLogout }) => {
+
+
+    return (
+        
+
+    )
+
+
+
+
+  }
+
+  export default Navbar
