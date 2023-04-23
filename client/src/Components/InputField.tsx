@@ -10,7 +10,7 @@ interface Props {
 
   import React from 'react'
   
-  const InputField = () => {
+  const InputField:React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
     return (
       <div>
         
