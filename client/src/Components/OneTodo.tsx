@@ -33,6 +33,14 @@ const OneTodo: React.FC<{
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const handleDone = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <div>
        <form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
