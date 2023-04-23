@@ -12,7 +12,16 @@ interface Props {
 
   import React from 'react'
   
-  const Navbar = ({ setUser, user, onLogout }) => {
+  const Navbar:React.FC<Props> = ({ setUser, user, onLogout }) => {
+
+    function handleLogoutOnClick(): void {
+        fetch("http://localhost:3000/logout", { method: "DELETE" }).then((r) => {
+          if (r.ok) {
+            setUser(null);
+          }
+        });
+      }
+
     return (
       <div>
         
