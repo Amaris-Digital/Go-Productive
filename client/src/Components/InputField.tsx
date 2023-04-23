@@ -1,5 +1,5 @@
 
-
+import React, { useRef } from "react";
 
 interface Props {
     todo: string;
@@ -8,9 +8,10 @@ interface Props {
   }
 
 
-  import React from 'react'
-  
   const InputField:React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
+
+    const inputRef = useRef<HTMLInputElement>(null);
+
     return (
       <div>
         <form
