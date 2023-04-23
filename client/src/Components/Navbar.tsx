@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
 
+
+
 interface Props {
     user: {
       name: string;
@@ -21,7 +23,20 @@ interface Props {
 
 
     return (
-
+        <>
+      <div className="header-background">
+        <div>
+          <p className="welcome">Welcome, {user.name}!</p>
+          <button onClick={handleLogoutOnClick} className="logout-button">
+            Logout
+          </button>
+        </div>
+        {/* <Link to="/comments" className="nav-button"> Your Thoughts? </Link> */}
+        <Link to="/tasks" className="nav-button">
+          Home
+        </Link>
+      </div>
+    </>
 
     )
 
