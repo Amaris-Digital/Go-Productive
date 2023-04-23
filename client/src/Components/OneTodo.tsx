@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 import { Todo } from "../Model/Todo";
@@ -10,9 +10,16 @@ const OneTodo: React.FC<{
     setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
   }> = ({ todo, todos, setTodos }) => {
 
+    
+
 
     const [edit, setEdit] = useState<boolean>(false);
     const [editTodo, setEditTodo] = useState<string>(todo.name);
+
+    const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [edit]);
 
   return (
     <div>
