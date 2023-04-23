@@ -13,7 +13,25 @@ interface Props {
   const InputField:React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
     return (
       <div>
-        
+        <form
+      className="input"
+      onSubmit={(e) => {
+        handleAdd(e);
+        inputRef.current?.blur();
+      }}
+    >
+      <input
+        ref={inputRef}
+        type="input"
+        value={todo}
+        onChange={(event) => setTodo(event.target.value)}
+        placeholder="Enter your task"
+        className="input__box"
+      />
+      <button className="input__submit" type="submit">
+        Go
+      </button>
+    </form>
       </div>
     )
   }
