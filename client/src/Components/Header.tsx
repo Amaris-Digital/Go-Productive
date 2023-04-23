@@ -10,3 +10,16 @@ interface Props {
     onLogout: () => void
   }
   
+
+  import React from 'react'
+  
+  const Header:React.FC<Props> = ({user, setUser, onLogout}) => {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
+  
+  export default Header
+  
