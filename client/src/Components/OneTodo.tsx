@@ -16,7 +16,38 @@ const OneTodo: React.FC<{
 
   return (
     <div>
-      
+       <form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
+      {edit ? (
+        <input
+          value={editTodo}
+          onChange={(e) => setEditTodo(e.target.value)}
+          className="todos__single--text"
+          ref={inputRef}
+        />
+      ) : todo.completed ? (
+        <s className="todos__single--text">{todo.name}</s>
+      ) : (
+        <span className="todos__single--text">{todo.name}</span>
+      )}
+      <div>
+        <span
+          className="icon"
+          onClick={() => {
+            if (!edit && !todo.completed) {
+              setEdit(!edit);
+            }
+          }}
+        >
+          <AiFillEdit />
+        </span>
+        <span className="icon" onClick={() => handleDelete(todo.id)}>
+          <AiFillDelete />
+        </span>
+        <span className="icon" onClick={() => handleDone(todo.id)}>
+          <MdDone />
+        </span>
+      </div>
+    </form>
     </div>
   )
 }
