@@ -35,14 +35,7 @@ const SignUpForm: React.FC<Props> = ({onLogin}) => {
     });
   }
     
-  
-  //   fetch("http://localhost:3000/signup", {
-  //     method: 'POST',
-  //     headers: { "content-type":"application/json" },
-  //     body: JSON.stringify(newUser)
-  //   }).then(() => console.log(newUser));
-  
-  //  }
+
 
   return (
     <div>
